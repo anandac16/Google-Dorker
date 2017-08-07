@@ -47,7 +47,7 @@ function save($file,$data){
         return $links;
     }
 
-$search = "amsoai";
+$search = "one piece";
 $searchs = urlencode($search);
 for($i=0;$i<=1000;$i+=10){
 	$url = "https://www.google.com/search?q=$searchs&start=$i&ie=utf-8&oe=utf-8";
@@ -72,8 +72,8 @@ for($i=0;$i<=1000;$i+=10){
 			echo"\r\n";
 		}else{
 			save("unknown-urls.txt",$urls."\r\n");
-			print $urls;
-			echo"\r\n";
+			#print $urls;
+			#echo"\r\n";
 		}
 	}
 }
