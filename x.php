@@ -29,7 +29,7 @@ function url_check($url) {
         return $links;
     }
 
-$search = "index.php?id=";
+$search = "sukasuka";
 $searchs = urlencode($search);
 for($i=0;$i<=1000;$i+=10){
 $url = "https://www.google.com/search?q=$searchs&start=$i&ie=utf-8&oe=utf-8";
@@ -49,6 +49,9 @@ if(preg_match('/googleusercontent/',$o)){
 $urls = str_replace('\/','/',$urls);
 $urls = urldecode($urls);
 if(url_check($urls)){
+print $urls;
+echo"\r\n";
+}else{
 print $urls;
 echo"\r\n";
 }
