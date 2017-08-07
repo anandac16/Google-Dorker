@@ -1,4 +1,16 @@
 <?php
+
+/**
+
+	Reference://
+(-) http://php.net/manual/en/domdocument.loadhtml.php
+(-) http://www.indoxploit.or.id/2016/06/google-dorker-new.html
+
+
+CHKID
+
+**/
+
 error_reporting(0);
 function url_check($url) {
     $headers = @get_headers($url);
