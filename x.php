@@ -55,7 +55,11 @@ function paging($numb){
         return $links;
     }
 $r = md5(rand(1000,9999));
-$search = "asuwsa";
+if(!$argv[1]){
+	$search = "asuwsa";	// Tulis manual disini jika tidak menggunakan argv
+}else{
+	$search = $argv[1];
+}
 $searchs = urlencode($search);
 for($i=0;$i<=1000;$i+=10){
 	if(!$i==0){
