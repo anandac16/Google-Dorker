@@ -6,6 +6,7 @@
 (-) http://php.net/manual/en/domdocument.loadhtml.php
 (-) http://www.indoxploit.or.id/2016/06/google-dorker-new.html
 
+Tinggal kembangin lagi biar gak kena captcha
 
 CHKID
 
