@@ -1,6 +1,13 @@
 # Google-Dorker
 
-run: php file.php kata_yang_di_cari
+# UPDATE
+
+pakai yang new_googled.php yang sudah update
+
+
+
+run: php new_googled.php kata_yang_di_cari
+
 
 atau bisa dengan manual edit dari script
 
