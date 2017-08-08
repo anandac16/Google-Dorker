@@ -23,6 +23,13 @@ function save($file,$data){
         fclose($fp);
 }
 
+function paging($numb){
+	$c = strlen($numb);
+	$a = $c-1;
+	$l = substr($k,0,$a);
+	return $l;
+}
+
   function get_links($url) {
 
         // Create a new DOM Document to hold our webpage structure
@@ -46,12 +53,20 @@ function save($file,$data){
         //Return the links
         return $links;
     }
-
-$search = "one piece";
+$r = md5(rand(1000,9999));
+$search = "asuwsa";
 $searchs = urlencode($search);
 for($i=0;$i<=1000;$i+=10){
+	if(!$i==0){
+		$page = paging($i);
+	}else{
+		$page = 1;
+	}
+	echo"Page: $page\r\n";
+
 	$url = "https://www.google.com/search?q=$searchs&start=$i&ie=utf-8&oe=utf-8";
 	$k = get_links($url);
+	$log = save("/home/log/".$r.".log",$k);
 	$l = json_encode($k);
 
 	$z = explode('url?q=',$l);
@@ -68,13 +83,14 @@ for($i=0;$i<=1000;$i+=10){
 		$urls = urldecode($urls);
 		if(url_check($urls)){
 			print $urls;
-			save("valid-urls.txt",$urls."\r\n");
+			save("/home/log/valid-urls.txt",$urls."\r\n");
 			echo"\r\n";
 		}else{
-			save("unknown-urls.txt",$urls."\r\n");
+			save("/home/log/unknown-urls.txt",$urls."\r\n");
 			#print $urls;
 			#echo"\r\n";
 		}
 	}
+
 }
 ?>
