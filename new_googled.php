@@ -1,5 +1,5 @@
 <?php
-include"simple_html_dom.php";
+//include"simple_html_dom.php";
 /**
 
 	Reference://
@@ -73,7 +73,7 @@ for($i=0;$i<=1000;$i+=10){
     $simple_html_dom = new simple_html_dom();
     $simple_html_dom -> load_file($url, false, $context);
     */
-    $k = file_get_contents($url);
+    include"z.php";
 	
 	$log = save($r.".log",$k);
 
